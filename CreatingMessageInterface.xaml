@@ -1,0 +1,39 @@
+﻿<Window x:Class="Pochta.CreatingMessageInterface"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pochta"
+        mc:Ignorable="d"
+        Title="Отправить сообщение" Height="450" Width="800" Closing="Window_Closing">
+
+    <Grid>
+        <!--косметическое разделение грида-->
+        <Line X1="200" Y1="10" X2="200" Y2="400" Stroke="Black" />
+        <Line X1="585" Y1="150" X2="585" Y2="400" Stroke="Black" />
+        <Line X1="10" Y1="150" X2="190" Y2="150" Stroke="Black" />
+
+        <TextBox x:Name="otkovoTB" HorizontalAlignment="Left" Height="40" Margin="273,15,0,0" TextWrapping="Wrap" Text="Почта отправителя" VerticalAlignment="Top" Width="300" VerticalContentAlignment="Center" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="208,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="33" Text="От кого: " TextAlignment="Right"/>
+        <TextBox x:Name="komuTB" HorizontalAlignment="Left" Height="40" Margin="273,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" RenderTransformOrigin="0.786,0.062" VerticalContentAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="208,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="60" Text="Кому:" TextAlignment="Right"/>
+        <TextBox x:Name="temaTB" HorizontalAlignment="Left" Height="40" Margin="273,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" RenderTransformOrigin="0.786,0.062" VerticalContentAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="208,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="60" TextAlignment="Right"><Run Text="Тема"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="textTB" HorizontalAlignment="Left" Height="150" Margin="208,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="365"/>
+        <TextBlock HorizontalAlignment="Left" Margin="208,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Height="25" Text="Текст:"/>
+        <Button x:Name="SendMessage" Content="Отправить сообщение" HorizontalAlignment="Left" Margin="208,350,0,0" VerticalAlignment="Top" Width="250" Height="45" Click="SendMessage_Click"/>
+        <Button x:Name="AddAddress" Content="Добавить адрес в рассылку" HorizontalAlignment="Left" Margin="592,66,0,0" VerticalAlignment="Top" Width="190" Height="28" Click="AddAddress_Click"/>
+        <TextBlock x:Name="rassylka" HorizontalAlignment="Left" Margin="617,117,0,0" TextWrapping="Wrap" Text="Адреса для рассылки" VerticalAlignment="Top" Height="38" Width="143" TextAlignment="Center" Visibility="Hidden"/>
+        <ListBox x:Name="rassylkaLB" HorizontalAlignment="Left" Height="175" Margin="592,160,0,0" VerticalAlignment="Top" Width="190" Visibility="Hidden"/>
+        <Button x:Name="DeleteAddress" Content="Удалить адрес" HorizontalAlignment="Left" Margin="592,350,0,0" VerticalAlignment="Top" Width="190" Height="27" Visibility="Hidden" Click="DeleteAddress_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Height="25" Text="Вложения" TextAlignment="Center"/>
+        <ListBox x:Name="attachmentsLB" HorizontalAlignment="Left" Height="150" Margin="10,185,0,0" VerticalAlignment="Top" Width="182" Drop="attachmentsLB_Drop" AllowDrop="true"/>
+        <Button x:Name="DeleteAttachment" Content="Удалить вложение" HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top" Width="182" Height="27" Click="DeleteAttachment_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Height="25" Text="Черновики" TextAlignment="Center"/>
+        <ComboBox Name="chernovikiCB" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="182"/>
+        <Button x:Name="OpenChernovik" Content="Открыть" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Width="85" Click="OpenChernovik_Click"/>
+        <Button x:Name="DeleteChernovik" Content="Удалить" HorizontalAlignment="Left" Margin="107,90,0,0" VerticalAlignment="Top" Width="85" Click="DeleteChernovik_Click"/>
+        <Button x:Name="AddChernovik" Content="Добавить в&#xD;&#xA;черновик" HorizontalAlignment="Left" Margin="470,350,0,0" VerticalAlignment="Top" Width="103" Height="45" Click="AddChernovik_Click"/>
+
+    </Grid>
+</Window>
